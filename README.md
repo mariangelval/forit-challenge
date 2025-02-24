@@ -12,7 +12,7 @@ Clonar el repositorio github, desde Github Desktop o ejecutar en la terminal o C
 https://github.com/mariangelval/forit-challenge.git
 ```
 
-### Pre-requisitos 📋
+## Pre-requisitos 📋
 
 - Node.js (versión 14 o superior) - [Instalar](https://nodejs.org/es)
 
