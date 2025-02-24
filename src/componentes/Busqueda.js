@@ -5,12 +5,16 @@ const ComponenteBusqueda = ({ usuarios, setUsuarios }) => {
 
   const URL = "https://jsonplaceholder.typicode.com/users";
 
+  // Función: Si no hay usuarios, hacer una llamada al API y almacenarlos en el estado
   const mostrarDatos = async () => {
-    const response = await fetch(URL);
-    const data = await response.json();
-    setUsuarios(data);
+    if (usuarios.length === 0) {
+      const response = await fetch(URL);
+      const data = await response.json();
+      setUsuarios(data);
+    }
   };
 
+  // Filtrar los usuarios según el texto ingresado en el buscador (por nombre, email o ciudad)
   const buscador = (e) => {
     setBusqueda(e.target.value);
   };
@@ -24,8 +28,9 @@ const ComponenteBusqueda = ({ usuarios, setUsuarios }) => {
 
   useEffect(() => {
     mostrarDatos();
-  });
+  }, []);
 
+  // Vista de la lista
   return (
     <div className="container mt-4">
       <input
