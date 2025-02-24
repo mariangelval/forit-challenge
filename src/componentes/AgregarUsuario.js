@@ -4,6 +4,7 @@ import "./AgregarUsuario.css";
 // Inicialización de los valores del formulario y manejo de cambios en los campos
 const AgregarUsuario = ({ setUsuarios, cerrarModal }) => {
   const [nombre, setNombre] = useState("");
+  const [usuario, setUsuario] = useState("");
   const [email, setEmail] = useState("");
   const [ciudad, setCiudad] = useState("");
   const [telefono, setTelefono] = useState("");
@@ -16,6 +17,7 @@ const AgregarUsuario = ({ setUsuarios, cerrarModal }) => {
     const nuevoUsuario = {
       id: Date.now(),
       name: nombre,
+      username: usuario,
       email: email,
       address: { city: ciudad },
       phone: telefono,
@@ -27,6 +29,7 @@ const AgregarUsuario = ({ setUsuarios, cerrarModal }) => {
 
     // Limpiar los campos del formulario y cerrar el modal después de agregar el usuario
     setNombre("");
+    setUsuario("");
     setEmail("");
     setCiudad("");
     setTelefono("");
@@ -45,6 +48,14 @@ const AgregarUsuario = ({ setUsuarios, cerrarModal }) => {
             placeholder="Nombre"
             value={nombre}
             onChange={(e) => setNombre(e.target.value)}
+            className="form-control mb-2"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Usuario"
+            value={usuario}
+            onChange={(e) => setUsuario(e.target.value)}
             className="form-control mb-2"
             required
           />

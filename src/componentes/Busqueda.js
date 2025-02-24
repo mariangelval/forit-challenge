@@ -37,7 +37,7 @@ const ComponenteBusqueda = ({ usuarios, setUsuarios }) => {
         value={busqueda}
         onChange={buscador}
         type="text"
-        placeholder="Buscar"
+        placeholder="Buscar por nombre, email o ciudad..."
         className="form-control"
       />
       <br />

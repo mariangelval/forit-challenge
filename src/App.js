@@ -17,7 +17,7 @@ const App = () => {
           className="btn btn-primary"
           onClick={() => setModalVisible(true)}
         >
-          Agregar Usuario
+          <i class="bi bi-plus"></i> Agregar Usuario
         </button>
       </div>
 
